@@ -919,24 +919,25 @@ section {
     max-width: 440px;
   }
 
-  /* Hero leaves — smaller and pushed to edges */
+  /* Hero leaves — repositioned to frame the content */
   .hero-leaf--1 {
-    width: 120px;
-    top: 3%;
-    left: -2%;
-    opacity: 0.5;
+    width: 110px;
+    top: 6%;
+    left: 4%;
+    opacity: 0.6;
   }
   .hero-leaf--2 {
-    width: 100px;
-    bottom: 5%;
-    right: -3%;
-    opacity: 0.45;
+    width: 90px;
+    bottom: 18%;
+    right: 5%;
+    opacity: 0.55;
   }
   .hero-leaf--3 {
     width: 70px;
-    top: 18%;
-    right: 2%;
-    opacity: 0.4;
+    top: 50%;
+    left: 6%;
+    right: auto;
+    opacity: 0.45;
   }
 
   /* Showcase */
@@ -1000,10 +1001,10 @@ section {
   .hero-actions { flex-direction: column; gap: 12px; }
   .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
 
-  /* Hide the smallest leaf on very small screens, scale down others */
+  /* Scale down leaves on small phones */
+  .hero-leaf--1 { width: 80px; top: 5%; left: 3%; opacity: 0.5; }
+  .hero-leaf--2 { width: 70px; bottom: 20%; right: 3%; opacity: 0.45; }
   .hero-leaf--3 { display: none; }
-  .hero-leaf--1 { width: 90px; opacity: 0.4; }
-  .hero-leaf--2 { width: 80px; opacity: 0.35; }
 
   /* Scroll hint */
   .scroll-hint { bottom: 20px; }
