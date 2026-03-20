@@ -941,7 +941,7 @@ section {
 
   /* Diagram */
   .community-diagram { padding: 50px 0; }
-  .diagram-wrap { padding: 0 8px; }
+  .diagram-wrap { padding: 0; max-width: 105%; margin-left: -2.5%; }
 
   /* How it works */
   .steps {
