@@ -850,6 +850,24 @@ section {
 }
 
 /* ============================================
+   TRAY / PANEL SLIDE ANIMATIONS
+   ============================================ */
+@keyframes tray-in {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes tray-out {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+.tray-slide-up {
+  animation: tray-in 0.3s ease-out forwards;
+}
+.tray-slide-down {
+  animation: tray-out 0.25s ease-in forwards;
+}
+
+/* ============================================
    SCROLL ANIMATIONS
    ============================================ */
 .reveal {
@@ -889,9 +907,8 @@ section {
 @media (max-width: 768px) {
   section { padding: 72px 0; }
 
-  /* Nav */
-  .nav-links { display: none; }
-  .nav-links.open {
+  /* Nav — slide down/up animation */
+  .nav-links {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -904,6 +921,15 @@ section {
     padding: 24px;
     gap: 20px;
     border-bottom: 1px solid var(--border);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
   .nav-toggle { display: block; }
 
