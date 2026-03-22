@@ -1041,15 +1041,15 @@ html.light-mode {
   margin-right: 8px;
 }
 .theme-toggle:hover { border-color: var(--gold-dim); color: var(--text); }
-.theme-toggle .material-symbols-outlined { font-size: 20px; }
+.theme-toggle .material-symbols-outlined { font-size: 20px; line-height: 1; }
 
-/* In dark mode: show sun (to switch to light), hide moon */
-.theme-icon-light { display: inline; }
-.theme-icon-dark { display: none; }
+/* Dark mode default: show sun, hide moon */
+.theme-icon-light { display: inline !important; }
+.theme-icon-dark { display: none !important; }
 
-/* In light mode: show moon (to switch to dark), hide sun */
-.light-mode .theme-icon-light { display: none; }
-.light-mode .theme-icon-dark { display: inline; }
+/* Light mode: show moon, hide sun */
+.light-mode .theme-icon-light { display: none !important; }
+.light-mode .theme-icon-dark { display: inline !important; }
 
 /* ===== SCROLL REVEAL ===== */
 .reveal {
