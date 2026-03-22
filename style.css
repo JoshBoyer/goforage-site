@@ -394,6 +394,173 @@ a:hover { color: var(--gold); }
 }
 
 /* Meals illustration — weekly dot grid */
+/* Pantry input illustration */
+.feat-illus-input {
+  aspect-ratio: auto;
+  padding: 24px;
+  gap: 0;
+}
+.feat-illus-input::before { background: radial-gradient(circle, var(--green-glow), transparent 70%); }
+
+.input-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.input-method-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(109, 190, 90, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.input-method-icon .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--green);
+}
+
+.input-speech-bubble {
+  background: rgba(109, 190, 90, 0.08);
+  border: 1px solid rgba(109, 190, 90, 0.15);
+  border-radius: 10px 10px 10px 2px;
+  padding: 8px 12px;
+  flex-grow: 1;
+}
+.speech-text {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.input-type-field {
+  flex-grow: 1;
+}
+.type-text {
+  display: block;
+  background: rgba(160, 140, 100, 0.08);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px 6px 0 0;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  color: var(--text);
+  font-family: 'Work Sans', sans-serif;
+}
+.type-cursor {
+  color: var(--green);
+  animation: cursor-blink 1s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.autocomplete-dropdown {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+.autocomplete-item {
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+.autocomplete-item.active {
+  background: rgba(109, 190, 90, 0.1);
+  color: var(--green);
+}
+
+.input-receipt {
+  background: rgba(232, 228, 220, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 10px;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+.receipt-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  padding: 2px 0;
+  font-family: monospace;
+}
+.receipt-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(109, 190, 90, 0.4);
+  box-shadow: 0 0 8px rgba(109, 190, 90, 0.3);
+  animation: scan-sweep 2.5s ease-in-out infinite;
+}
+@keyframes scan-sweep {
+  0%, 100% { top: 0; }
+  50% { top: 100%; }
+}
+
+.input-flow-arrow {
+  text-align: center;
+  padding: 8px 0;
+  color: var(--text-tertiary);
+}
+.input-flow-arrow .material-symbols-outlined {
+  font-size: 18px;
+  opacity: 0.4;
+}
+
+.input-result {
+  background: rgba(109, 190, 90, 0.06);
+  border: 1px solid rgba(109, 190, 90, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.input-result-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+.result-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+.result-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.result-qty {
+  margin-left: auto;
+  color: var(--text-tertiary);
+  font-size: 0.65rem;
+}
+
 .feat-illus-meals::before { background: radial-gradient(circle, var(--gold-glow), transparent 70%); }
 .illus-week-header {
   display: grid;
@@ -651,6 +818,17 @@ a:hover { color: var(--gold); }
   letter-spacing: 0;
 }
 
+/* Ring SVG default (dark mode) colours — moved from inline attributes */
+.ring-outer { stroke: rgba(196,168,98,0.08); }
+.ring-label-outer { fill: rgba(196,168,98,0.35); }
+.ring-mid { stroke: rgba(109,190,90,0.12); }
+.ring-label-mid { fill: rgba(109,190,90,0.4); }
+.ring-inner { stroke: rgba(109,190,90,0.2); }
+.ring-label-inner { fill: rgba(109,190,90,0.6); }
+.ring-pulse { stroke: rgba(109,190,90,0.15); }
+.ring-centre { fill: rgba(109,190,90,0.1); stroke: rgba(109,190,90,0.3); }
+.ring-label-kitchen { fill: rgba(232,228,220,0.7); }
+
 /* ===== WAITLIST CTA ===== */
 .cta-banner {
   padding: var(--section-pad) 0;
@@ -749,6 +927,129 @@ a:hover { color: var(--gold); }
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--text-secondary); }
+
+/* ===== LIGHT MODE ===== */
+/* Applied via .light-mode class on <html> — set by JS from system preference or toggle */
+
+html.light-mode {
+  --bg: #F8F4ED;
+  --bg-alt: #F2EDE4;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F5F1EA;
+  --green: #4A9040;
+  --green-dim: #3A7830;
+  --green-glow: rgba(74, 144, 64, 0.1);
+  --gold: #8A7030;
+  --gold-dim: #6A5520;
+  --gold-glow: rgba(138, 112, 48, 0.08);
+  --text: #2c2c2a;
+  --text-secondary: #5C5850;
+  --text-tertiary: #7A756C;
+  --border: rgba(100, 80, 40, 0.1);
+  --border-strong: rgba(100, 80, 40, 0.18);
+  --violet: rgba(139, 92, 246, 0.8);
+}
+
+.light-mode body::before { opacity: 0.012; }
+.light-mode .site-nav.scrolled { background: rgba(248, 244, 237, 0.92); }
+.light-mode .hero { background: radial-gradient(ellipse at 50% 60%, rgba(74, 144, 64, 0.06) 0%, transparent 60%); }
+.light-mode .leaf-vein { stroke: #F8F4ED; }
+
+/* Feature illustration cards — stronger bg on light */
+.light-mode .feat-illus { background: #EDE8DF; border-color: rgba(100, 80, 40, 0.15); }
+
+/* Pantry input illustration */
+.light-mode .input-method-icon { background: rgba(74, 144, 64, 0.15); }
+.light-mode .input-speech-bubble { background: rgba(74, 144, 64, 0.1); border-color: rgba(74, 144, 64, 0.25); }
+.light-mode .speech-text { color: var(--text-secondary); }
+.light-mode .type-text { background: #FFFFFF; border-color: rgba(100, 80, 40, 0.2); }
+.light-mode .autocomplete-dropdown { background: #FFFFFF; border-color: rgba(100, 80, 40, 0.2); }
+.light-mode .autocomplete-item.active { background: rgba(74, 144, 64, 0.12); }
+.light-mode .autocomplete-item { color: var(--text-secondary); }
+.light-mode .input-receipt { background: #FFFFFF; border-color: rgba(100, 80, 40, 0.15); }
+.light-mode .receipt-line { color: var(--text-secondary); }
+.light-mode .receipt-scan-line { background: rgba(74, 144, 64, 0.5); box-shadow: 0 0 8px rgba(74, 144, 64, 0.3); }
+.light-mode .input-result { background: rgba(74, 144, 64, 0.08); border-color: rgba(74, 144, 64, 0.25); }
+.light-mode .result-item { color: var(--text); }
+.light-mode .result-qty { color: var(--text-secondary); }
+
+/* Meal dot grid — stronger fills */
+.light-mode .illus-meal-dot { background: rgba(100, 80, 40, 0.1); border-color: rgba(100, 80, 40, 0.2); }
+.light-mode .illus-meal-dot.filled { background: #4A9040; border-color: #4A9040; }
+.light-mode .illus-meal-dot.filled-gold { background: #8A7030; border-color: #8A7030; }
+.light-mode .illus-meal-dot.filled-dim { background: #6AAA58; border-color: #6AAA58; }
+
+/* Shopping checklist — stronger contrast */
+.light-mode .illus-check-label { background: rgba(100, 80, 40, 0.18); }
+.light-mode .illus-check-label.done { opacity: 0.35; }
+.light-mode .illus-checkbox { border-color: rgba(100, 80, 40, 0.3); }
+.light-mode .illus-checkbox.checked { background: #4A9040; border-color: #4A9040; }
+
+/* Board note cards — more visible */
+.light-mode .illus-note-1 { background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.25); }
+.light-mode .illus-note-1 .illus-note-line { background: rgba(139, 92, 246, 0.2); }
+.light-mode .illus-note-2 { background: rgba(74, 144, 64, 0.1); border-color: rgba(74, 144, 64, 0.22); }
+.light-mode .illus-note-2 .illus-note-line { background: rgba(74, 144, 64, 0.18); }
+.light-mode .illus-note-3 { background: rgba(138, 112, 48, 0.1); border-color: rgba(138, 112, 48, 0.22); }
+.light-mode .illus-note-3 .illus-note-line { background: rgba(138, 112, 48, 0.18); }
+
+/* Illustration glows — slightly stronger */
+.light-mode .feat-illus-board::before { background: radial-gradient(circle, rgba(139, 92, 246, 0.06), transparent 70%); }
+.light-mode .feat-illus-pantry::before, .light-mode .feat-illus-input::before { background: radial-gradient(circle, rgba(74, 144, 64, 0.08), transparent 70%); }
+.light-mode .feat-illus-meals::before { background: radial-gradient(circle, rgba(138, 112, 48, 0.06), transparent 70%); }
+.light-mode .feat-illus-shopping::before { background: radial-gradient(circle, rgba(74, 144, 64, 0.08), transparent 70%); }
+
+/* Diff icon backgrounds — more visible */
+.light-mode .diff-icon { background: rgba(74, 144, 64, 0.12); }
+
+/* Step numbers — more visible */
+.light-mode .step-number { opacity: 0.35; }
+
+/* Community rings — stronger on light bg */
+.light-mode .ring-outer { stroke: rgba(138, 112, 48, 0.25); }
+.light-mode .ring-label-outer { fill: rgba(138, 112, 48, 0.6); }
+.light-mode .ring-mid { stroke: rgba(74, 144, 64, 0.3); }
+.light-mode .ring-label-mid { fill: rgba(74, 144, 64, 0.65); }
+.light-mode .ring-inner { stroke: rgba(74, 144, 64, 0.4); }
+.light-mode .ring-label-inner { fill: rgba(74, 144, 64, 0.8); }
+.light-mode .ring-pulse { stroke: rgba(74, 144, 64, 0.3); }
+.light-mode .ring-centre { fill: rgba(74, 144, 64, 0.12); stroke: rgba(74, 144, 64, 0.45); }
+.light-mode .ring-label-kitchen { fill: rgba(44, 44, 42, 0.8); }
+
+/* Signup input */
+.light-mode .signup-input-wrap input { background: #FFFFFF; }
+
+/* Mobile nav */
+@media (max-width: 860px) {
+  .light-mode .nav-links.open { background: rgba(248, 244, 237, 0.97); }
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: border-color 0.2s, color 0.2s;
+  padding: 0;
+  margin-right: 8px;
+}
+.theme-toggle:hover { border-color: var(--gold-dim); color: var(--text); }
+.theme-toggle .material-symbols-outlined { font-size: 20px; }
+
+/* In dark mode: show sun (to switch to light), hide moon */
+.theme-icon-light { display: inline; }
+.theme-icon-dark { display: none; }
+
+/* In light mode: show moon (to switch to dark), hide sun */
+.light-mode .theme-icon-light { display: none; }
+.light-mode .theme-icon-dark { display: inline; }
 
 /* ===== SCROLL REVEAL ===== */
 .reveal {

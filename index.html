@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#17140f">
+  <meta name="theme-color" content="#17140f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F8F4ED" media="(prefers-color-scheme: light)">
 
   <title>Forage — Pantry Tracking, Meal Planning &amp; Smart Shopping Lists for Households</title>
   <meta name="description" content="Forage tracks your pantry, plans meals around what you have, and builds smart shopping lists — so your household wastes less and eats better. Free to join.">
@@ -131,9 +132,9 @@
       <a href="#" class="nav-logo">
         <svg viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 0C16 0 32 8 32 24C32 36 24 44 16 44C8 44 0 36 0 24C0 8 16 0 16 0Z" fill="#6DBE5A"/>
-          <line x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
-          <line x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+          <line class="leaf-vein" x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
+          <line class="leaf-vein" x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+          <line class="leaf-vein" x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
         </svg>
         <span>Forage</span>
       </a>
@@ -143,6 +144,10 @@
         <li><a href="#why-forage">Why Forage</a></li>
         <li><a href="#signup" class="nav-cta">Join the Waitlist</a></li>
       </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="material-symbols-outlined theme-icon-light">light_mode</span>
+        <span class="material-symbols-outlined theme-icon-dark">dark_mode</span>
+      </button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <line x1="3" y1="6" x2="21" y2="6"/>
@@ -158,9 +163,9 @@
     <div class="hero-logo reveal">
       <svg viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0C16 0 32 8 32 24C32 36 24 44 16 44C8 44 0 36 0 24C0 8 16 0 16 0Z" fill="#6DBE5A"/>
-        <line x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
-        <line x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+        <line class="leaf-vein" x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
+        <line class="leaf-vein" x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+        <line class="leaf-vein" x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
       </svg>
     </div>
 
@@ -234,17 +239,59 @@
           </ul>
         </div>
         <div class="feature-visual">
-          <div class="feat-illus feat-illus-pantry">
-            <div class="illus-bar-label"><span>Olive oil</span><span style="color:var(--green)">Full</span></div>
-            <div class="illus-bar"><div class="illus-bar-fill full" style="width:90%"></div></div>
-            <div class="illus-bar-label"><span>Brown rice</span><span style="color:var(--green)">Good</span></div>
-            <div class="illus-bar"><div class="illus-bar-fill full" style="width:72%"></div></div>
-            <div class="illus-bar-label"><span>Cheddar</span><span style="color:var(--gold)">Low</span></div>
-            <div class="illus-bar"><div class="illus-bar-fill mid" style="width:28%"></div></div>
-            <div class="illus-bar-label"><span>Eggs</span><span style="color:var(--gold)">Low</span></div>
-            <div class="illus-bar"><div class="illus-bar-fill mid" style="width:18%"></div></div>
-            <div class="illus-bar-label"><span>Cream</span><span style="color:#E85D4A">Expiring</span></div>
-            <div class="illus-bar"><div class="illus-bar-fill low" style="width:45%"></div></div>
+          <div class="feat-illus feat-illus-input">
+            <!-- Three input methods -->
+            <div class="input-methods">
+
+              <!-- Voice -->
+              <div class="input-method">
+                <div class="input-method-icon"><span class="material-symbols-outlined">mic</span></div>
+                <div class="input-speech-bubble">
+                  <span class="speech-text">"half a bag of rice, a dozen eggs, three cans of tomatoes"</span>
+                </div>
+              </div>
+
+              <!-- Type with autocomplete -->
+              <div class="input-method">
+                <div class="input-method-icon"><span class="material-symbols-outlined">keyboard</span></div>
+                <div class="input-type-field">
+                  <span class="type-text">tom<span class="type-cursor">|</span></span>
+                  <div class="autocomplete-dropdown">
+                    <div class="autocomplete-item active">Tomatoes</div>
+                    <div class="autocomplete-item">Tomato paste</div>
+                    <div class="autocomplete-item">Tomato sauce</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt scan -->
+              <div class="input-method">
+                <div class="input-method-icon"><span class="material-symbols-outlined">receipt_long</span></div>
+                <div class="input-receipt">
+                  <div class="receipt-line"><span>Eggs (12)</span><span>$4.29</span></div>
+                  <div class="receipt-line"><span>Olive oil 1L</span><span>$8.99</span></div>
+                  <div class="receipt-line"><span>Brown rice 2kg</span><span>$5.49</span></div>
+                  <div class="receipt-scan-line"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Flow arrow -->
+            <div class="input-flow-arrow">
+              <span class="material-symbols-outlined">arrow_downward</span>
+            </div>
+
+            <!-- Result: organized pantry -->
+            <div class="input-result">
+              <div class="input-result-label">Your Pantry</div>
+              <div class="result-items">
+                <div class="result-item"><span class="result-dot" style="background:var(--green)"></span>Brown rice<span class="result-qty">2 kg</span></div>
+                <div class="result-item"><span class="result-dot" style="background:var(--green)"></span>Olive oil<span class="result-qty">1 L</span></div>
+                <div class="result-item"><span class="result-dot" style="background:var(--green)"></span>Eggs<span class="result-qty">12</span></div>
+                <div class="result-item"><span class="result-dot" style="background:var(--green)"></span>Tomatoes<span class="result-qty">3 cans</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -504,36 +551,36 @@
           </defs>
 
           <!-- Outer ring — Your Community -->
-          <circle class="ring ring-outer" cx="250" cy="250" r="200" fill="none" stroke="rgba(196,168,98,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
-          <text x="250" y="68" text-anchor="middle" class="ring-label ring-label-outer" fill="rgba(196,168,98,0.35)">Your Community</text>
+          <circle class="ring ring-outer" cx="250" cy="250" r="200" fill="none" stroke-width="1" stroke-dasharray="4 6"/>
+          <text x="250" y="68" text-anchor="middle" class="ring-label ring-label-outer">Your Community</text>
 
           <!-- Middle ring — Your Neighbourhood -->
-          <circle class="ring ring-mid" cx="250" cy="250" r="140" fill="none" stroke="rgba(109,190,90,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
-          <text x="250" y="124" text-anchor="middle" class="ring-label ring-label-mid" fill="rgba(109,190,90,0.4)">Your Neighbourhood</text>
+          <circle class="ring ring-mid" cx="250" cy="250" r="140" fill="none" stroke-width="1" stroke-dasharray="4 6"/>
+          <text x="250" y="124" text-anchor="middle" class="ring-label ring-label-mid">Your Neighbourhood</text>
 
           <!-- Inner ring — Your Household -->
-          <circle class="ring ring-inner" cx="250" cy="250" r="80" fill="none" stroke="rgba(109,190,90,0.2)" stroke-width="1.5"/>
-          <text x="250" y="182" text-anchor="middle" class="ring-label ring-label-inner" fill="rgba(109,190,90,0.6)">Your Household</text>
+          <circle class="ring ring-inner" cx="250" cy="250" r="80" fill="none" stroke-width="1.5"/>
+          <text x="250" y="182" text-anchor="middle" class="ring-label ring-label-inner">Your Household</text>
 
           <!-- Subtle pulse ring animation -->
-          <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(109,190,90,0.15)" stroke-width="1">
+          <circle class="ring-pulse" cx="250" cy="250" r="80" fill="none" stroke-width="1">
             <animate attributeName="r" from="80" to="200" dur="4s" repeatCount="indefinite"/>
             <animate attributeName="opacity" from="0.3" to="0" dur="4s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(109,190,90,0.12)" stroke-width="1">
+          <circle class="ring-pulse" cx="250" cy="250" r="80" fill="none" stroke-width="1">
             <animate attributeName="r" from="80" to="200" dur="4s" begin="2s" repeatCount="indefinite"/>
             <animate attributeName="opacity" from="0.25" to="0" dur="4s" begin="2s" repeatCount="indefinite"/>
           </circle>
 
           <!-- Centre — Forage leaf -->
-          <circle cx="250" cy="250" r="28" fill="rgba(109,190,90,0.1)" stroke="rgba(109,190,90,0.3)" stroke-width="1.5" filter="url(#ring-glow)"/>
+          <circle class="ring-centre" cx="250" cy="250" r="28" stroke-width="1.5" filter="url(#ring-glow)"/>
           <g transform="translate(239, 234) scale(0.65)">
             <path d="M16 0C16 0 32 8 32 24C32 36 24 44 16 44C8 44 0 36 0 24C0 8 16 0 16 0Z" fill="#6DBE5A"/>
-            <line x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
           </g>
-          <text x="250" y="290" text-anchor="middle" class="ring-label-center" fill="rgba(232,228,220,0.7)">Your Kitchen</text>
+          <text x="250" y="290" text-anchor="middle" class="ring-label-center ring-label-kitchen">Your Kitchen</text>
         </svg>
       </div>
     </div>
@@ -568,9 +615,9 @@
         <div class="footer-brand">
           <svg viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 0C16 0 32 8 32 24C32 36 24 44 16 44C8 44 0 36 0 24C0 8 16 0 16 0Z" fill="#4A9040"/>
-            <line x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="8" x2="16" y2="40" stroke="#17140f" stroke-width="1.5" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="18" x2="8" y2="26" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
+            <line class="leaf-vein" x1="16" y1="24" x2="24" y2="30" stroke="#17140f" stroke-width="1" stroke-linecap="round"/>
           </svg>
           <div>
             <div class="footer-motto">Find. Share. Grow.</div>
@@ -620,6 +667,25 @@
 
     // Hero reveals visible immediately
     document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
+
+    // Theme toggle
+    (function() {
+      const html = document.documentElement;
+      const saved = localStorage.getItem('forage-theme');
+
+      if (saved === 'light') {
+        html.classList.add('light-mode');
+      } else if (saved === 'dark') {
+        html.classList.remove('light-mode');
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        html.classList.add('light-mode');
+      }
+
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const isLight = html.classList.toggle('light-mode');
+        localStorage.setItem('forage-theme', isLight ? 'light' : 'dark');
+      });
+    })();
 
     // Waitlist handler
     function handleSignup(e) {
