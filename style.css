@@ -1036,9 +1036,15 @@ html.light-mode {
   justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, opacity 0.3s;
   padding: 0;
   margin-right: 8px;
+  opacity: 0;
+  pointer-events: none;
+}
+.site-nav.scrolled .theme-toggle {
+  opacity: 1;
+  pointer-events: auto;
 }
 .theme-toggle:hover { border-color: var(--gold-dim); color: var(--text); }
 .theme-toggle .material-symbols-outlined { font-size: 20px; line-height: 1; }
